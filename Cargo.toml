@@ -1,0 +1,12 @@
+[package]
+name = "year_progress"
+version = "0.1.0"
+authors = ["makerio"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+chrono = "0.4"
+indicatif = "0.16.2"
+clap = { version = "3.1.9", features = ["derive"] }

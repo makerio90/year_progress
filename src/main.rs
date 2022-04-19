@@ -18,8 +18,12 @@ struct Args {
     l: bool,
 
     ///bar thickness
-    #[clap(short, long)]
+    #[clap(short, long, default_value_t = 50)]
     thickness: u32,
+
+    ///hide percentage
+    #[clap(short, long)]
+    hide_percentage: bool,
 }
 
 fn main() {
@@ -58,7 +62,9 @@ fn main() {
             break;
         }
         bar.set_position(seconds_ran);
-        bar.set_message(format!("{}%", progress));
+        if !args.hide_percentage {
+            bar.set_message(format!("{}%", progress))
+        }
         if !args.l {
             break;
         };
